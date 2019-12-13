@@ -1,52 +1,42 @@
 import React from "react";
-import {
-    Card, CardImg, CardText, CardBody,
-    CardTitle, CardSubtitle, Button, Col
-  } from 'reactstrap';
+import styled from "styled-components";
 
-
-import styled from 'styled-components';
-
-const StyledCont = styled.div`
-display: flex; 
+const StyledOutterContainer = styled.div`
+display: flex;
 flex-direction: column;
-justify-content: space-between;
-background-color:blue;`;
+align-items: center;`
 
-const StyledContContainer = styled.div`
+const StyledContainer = styled.div`
+border: 2px dashed black;
+width: 33%;
+margin: 5%;`;
 
-margin: 10%;
-border: 2px solid black;`;
+const NameStyle = styled.h1`
+font-size: 4rem;
+color: red;`;
+
+const HeightStyle = styled.p`
+font-size: 2rem;
+color: blue;`;
+
+const MassStyle = styled.p`
+font-size: 2rem;
+color: green`;
+
+const HairStyle = styled.p`
+font-size: 2rem;
+color: purple;`;
 
 const Character = props => {
-    return (
-    // <div>
-    //   <h2>Name: {props.name}</h2>
-    //   <p>Height: {props.height}</p>
-    //   <p>Mass: {props.mass}</p>
-    //   <p>Hair color: {props.hairColor}</p>
-    // </div>
-
-    //  <Card body inverse style={{ backgroundColor: '#333', borderColor: '#333' }}>
-    //    <CardTitle>{props.name}</CardTitle>
-    //     <CardSubtitle>{props.height}</CardSubtitle>
-    //     <CardText>{props.weight}</CardText>
-    
-        
-    //  </Card> 
-    <Col key = {props.key}>
-    
-     <StyledContContainer>
-
-       <StyledCont>
-            <CardTitle>Name: {props.name}</CardTitle>
-            <CardSubtitle className = "text-warning">Height: {props.height} Inches</CardSubtitle>
-            <CardText>Mass: {props.mass} Grams</CardText>
-            <CardText>Hair Color: {props.hairColor}</CardText>
-        </StyledCont> 
-       
-     </StyledContContainer> 
-    </Col>
+    return ( 
+    <StyledOutterContainer>   
+        <StyledContainer>
+            <NameStyle>Name: {props.name}</NameStyle>
+            <HeightStyle>Height: {props.height}</HeightStyle>
+            <MassStyle>Mass: {props.mass}</MassStyle>
+            <HairStyle>Hair color: {props.hairColor}</HairStyle>
+        </StyledContainer>
+    </StyledOutterContainer> 
     )
   };
   
